@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "type": "general",
+        "setup": "I had a dream that I was a muffler last night.",
+        "punchline": "I woke up exhausted!"
+    },
+    {
+        "id": 2,
+        "type": "programming",
+        "setup": "There are 10 types of people in this world...",
+        "punchline": "Those who understand binary and those who don't"
+    },
+    {
+        "id": 3,
+        "type": "general",
+        "setup": "What do you call a factory that sells passable products?",
+        "punchline": "A satisfactory"
+    },
+    {
+        "id": 4,
+        "type": "knock-knock",
+        "setup": "Knock knock. \n Who's there? \n Little old lady. \n Little old lady who?",
+        "punchline": "I didn't know you could yodel!"
+    },
+    {
+        "id": 5,
+        "type": "general",
+        "setup": "Did you hear about the two silk worms in a race?",
+        "punchline": "It ended in a tie."
+    },
+    {
+        "id": 6,
+        "type": "general",
+        "setup": "What do you call a belt made out of watches?",
+        "punchline": "A waist of time."
+    },
+    {
+        "id": 7,
+        "type": "general",
+        "setup": "What does C.S. Lewis keep at the back of his wardrobe?",
+        "punchline": "Narnia business!"
+    },
+    {
+        "id": 8,
+        "type": "general",
+        "setup": "Why did the mushroom get invited to the party?",
+        "punchline": "Because he was a fungi."
+    },
+    {
+        "id": 9,
+        "type": "general",
+        "setup": "A ham sandwhich walks into a bar and orders a beer. The bartender says...",
+        "punchline": "I'm sorry, we don't serve food here"
+    },
+    {
+        "id": 10,
+        "type": "programming",
+        "setup": "How do you check if a webpage is HTML5?",
+        "punchline": "Try it out on Internet Explorer"
+    },
+    {
+        "id": 11,
+        "type": "general",
+        "setup": "What's the best time to go to the dentist?",
+        "punchline": "Tooth hurty."
+    },
+    {
+        "id": 12,
+        "type": "general",
+        "setup": "Did you hear about the two silk worms in a race?",
+        "punchline": "It ended in a tie."
+    },
+    {
+        "id": 13,
+        "type": "knock-knock",
+        "setup": "Knock knock. \n Who's there? \n Opportunity.",
+        "punchline": "That is impossible. Opportunity doesn’t come knocking twice!"
+    },
+    {
+        "id": 14,
+        "type": "general",
+        "setup": "Why did the Clydesdale give the pony a glass of water?",
+        "punchline": "Because he was a little horse"
+    },
+    {
+        "id": 15,
+        "type": "programming",
+        "setup": "Why do Java programmers wear glasses?",
+        "punchline": "Because they don't C#"
+    },
+    {
+        "id": 16,
+        "type": "general",
+        "setup": "Why is peter pan always flying?",
+        "punchline": "Because he neverlands"
+    },
+    {
+        "id": 17,
+        "type": "general",
+        "setup": "A termite walks into a bar and says...",
+        "punchline": "'Where is the bar tended?'"
+    },
+    {
+        "id": 18,
+        "type": "general",
+        "setup": "If you see a robbery at an Apple Store...",
+        "punchline": "Does that make you an iWitness?"
+    },
+    {
+        "id": 19,
+        "type": "general",
+        "setup": "Finally realized why my plant sits around doing nothing all day...",
+        "punchline": "He loves his pot."
+    },
+    {
+        "id": 20,
+        "type": "general",
+        "setup": "What happens to a frog's car when it breaks down?",
+        "punchline": "It gets toad away"
+    },
+    {
+        "id": 21,
+        "type": "computer",
+        "setup": "computer setup",
+        "punchline": "silly computer"
+    }
+]
