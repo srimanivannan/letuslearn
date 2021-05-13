@@ -1,8 +1,8 @@
-package com.manisrini.domain.completablefuture.checkingstatus;
+package com.manisrini.domain.completablefuture.checkingtaskstatus;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ExampleCheckingStatus {
+public class ExampleCheckingTaskStatus {
 
   public static void main(String[] args) throws InterruptedException {
     final CompletableFuture<Integer> failedTask = createFailedTask();
@@ -18,6 +18,7 @@ public class ExampleCheckingStatus {
     System.out.println("isDone(): " + successTask.isDone());
     System.out.println("isCancelled(): " + successTask.isCancelled());
     System.out.println("isCompletedExceptionally(): " + successTask.isCompletedExceptionally());
+    System.out.println("Main Thread completed");
   }
 
   private static CompletableFuture<Integer> createFailedTask() {

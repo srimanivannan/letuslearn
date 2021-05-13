@@ -1,0 +1,35 @@
+plugins {
+	id 'java'
+}
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(11)
+	}
+}
+group = 'com.manisrini'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.4.5'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.4.5'
+	implementation group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: '3.0.2'
+	implementation group: 'io.projectreactor.addons', name: 'reactor-extra', version: '3.4.3'
+
+	//implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.4.5'
+
+	// Swagger for webflux client . Right now it's not work. please check later
+	//	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+	//	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	//	implementation group: 'io.springfox', name: 'springfox-spring-webflux', version: '3.0.0'
+
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.4.5'
+	testImplementation group: 'io.projectreactor', name: 'reactor-test', version: '3.4.5'
+}
+
+test {
+	useJUnitPlatform()
+}

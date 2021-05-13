@@ -3,7 +3,7 @@ package com.manisrini.domain.java8.collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapMergeMethodExample {
+public class MapMergeMethod {
 
   private void mergeWithInSingleMapExample() {
     Map<Integer, Integer> map1 = new HashMap<>();
@@ -25,9 +25,9 @@ public class MapMergeMethodExample {
 
   public static void main(String[] args) {
 
-    MapMergeMethodExample mapMergeMethodExample = new MapMergeMethodExample();
-    mapMergeMethodExample.mergeWithInSingleMapExample();
-    mapMergeMethodExample.mergeTwoMapsExample();
+    MapMergeMethod mapMergeMethod = new MapMergeMethod();
+    mapMergeMethod.mergeWithInSingleMapExample();
+    mapMergeMethod.mergeTwoMapsExample();
   }
 
   private void mergeTwoMapsExample() {

@@ -8,7 +8,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class CollectorsExample {
+public class AirlineSeatsSplitStringAndCollectors {
 
   public static void main(String[] args) {
     String sample = "1A 1B,2A 2B";

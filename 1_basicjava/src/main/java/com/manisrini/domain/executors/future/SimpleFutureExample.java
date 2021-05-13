@@ -1,4 +1,4 @@
-package com.manisrini.domain.completablefuture.future;
+package com.manisrini.domain.executors.future;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +23,8 @@ public class SimpleFutureExample {
       System.out.println("non blocking. Doing useful work by main thread");
     });
 
-    System.out.println(result.get());
+    System.out.println(result.get()); // blocks main thread because of get()
+    System.out.println("I'm a main thread");
   }
 
   private static void delay(int millis) {

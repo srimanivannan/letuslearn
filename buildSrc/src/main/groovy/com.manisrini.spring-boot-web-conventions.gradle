@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+}
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(11)
+	}
+}
+group = 'com.manisrini'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.12.3'
+	//implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.3'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.5'
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.4.5'
+}
+
+test {
+	useJUnitPlatform()
+}

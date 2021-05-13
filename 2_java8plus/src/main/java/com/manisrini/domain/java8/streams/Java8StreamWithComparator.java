@@ -11,7 +11,7 @@ public class Java8StreamWithComparator {
         stocks.stream()
         //.sorted(Comparator.comparing(stock -> stock.price).reversed()); //ERROR
         //.sorted(Comparator.comparing((Stock stock) -> stock.ticker).reversed()); //OK
-        .sorted(Comparator.comparing((Stock stock) -> stock.getPrice()).reversed()); //ERROR
+        .sorted(Comparator.comparing(Stock::getPrice).reversed()); //ERROR
         //.sorted(Comparator.comparing((Stock stock) -> stock.getTicker()).reversed()); // OK
         //.sorted(Comparator.comparing(Stock::getTicker).reversed()) //OK
         //.sorted(Comparator.comparing(Stock::getPrice));

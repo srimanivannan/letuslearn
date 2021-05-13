@@ -14,12 +14,12 @@ public class FindDuplicateIntegers {
         IntStream stream = Arrays.stream(inputs);
         List<Integer> integerList = stream.boxed().collect(Collectors.toList());
 
-        Set<Integer> integers = integerList
+        Set<Integer> duplicateIntegers = integerList
                 .stream()
                 .filter(x -> Collections.frequency(integerList, x) > 1)
                 .collect(Collectors.toSet());
 
-        return integers;
+        return duplicateIntegers;
     }
 
     public static void main(String[] args) {

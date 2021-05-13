@@ -1,0 +1,4 @@
+# Since this is a webflux not a servlet.  the below context will not work. please explore more
+#server:
+#  servlet:
+#    context-path: /webflux-service
