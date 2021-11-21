@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.manisrini.domain.GreetMessage;
 
+
 @RestController
 @RequestMapping("/private/10001")
-public class HelloController {
+public class PerformanceAndProfilerController {
 
   @GetMapping("/message")
   public ResponseEntity<GreetMessage> getGreetMessage() {

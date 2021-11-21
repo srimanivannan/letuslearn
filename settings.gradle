@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'letuslearn'
-include('0_adapters', '1_basicjava', '2_java8plus', "3_assessments", "4_spring-boot-webflux", "5_spring-boot-web")
+include('0_adapters', '1_basicjava', '2_java8plus', "3_assessments", "4_spring-boot-webflux", "5_spring-boot-web", "6_garbage", "7_perf-and-profiler")

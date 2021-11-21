@@ -52,11 +52,11 @@ public class NioFilesExample {
 
   public static void main(String[] args) {
     NioFilesExample nioFilesExample = new NioFilesExample();
-    nioFilesExample.filesCreateTempFile();
-    nioFilesExample.fileLines();
-    nioFilesExample.fileReadAllLines();
+//    nioFilesExample.filesCreateTempFile();
+//    nioFilesExample.fileLines();
+//    nioFilesExample.fileReadAllLines();
     nioFilesExample.fileReadString();
-    nioFilesExample.fileGetFileStore();
-    nioFilesExample.fileReadAllBytesAndWrite();
+//    nioFilesExample.fileGetFileStore();
+//    nioFilesExample.fileReadAllBytesAndWrite();
   }
 }

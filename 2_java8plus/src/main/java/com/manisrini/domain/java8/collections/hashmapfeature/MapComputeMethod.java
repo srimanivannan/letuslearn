@@ -1,4 +1,4 @@
-package com.manisrini.domain.java8.collections;
+package com.manisrini.domain.java8.collections.hashmapfeature;
 
 import java.util.HashMap;
 
@@ -16,10 +16,12 @@ public class MapComputeMethod {
     System.out.println("HashMap:\n " + map);
 
     map.compute("b", (key, value) -> {
+      System.out.println("key:" + key + "value:" + value);
       return value == null? 1: value + 10;
     });
 
     map.compute("e", (key, value) -> {
+      System.out.println("key:" + key + "value:" + value);
       return value == null? 1: value + 10;
     });
 

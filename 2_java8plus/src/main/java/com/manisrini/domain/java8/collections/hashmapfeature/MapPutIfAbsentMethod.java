@@ -1,4 +1,4 @@
-package com.manisrini.domain.java8.collections;
+package com.manisrini.domain.java8.collections.hashmapfeature;
 
 import java.util.HashMap;
 

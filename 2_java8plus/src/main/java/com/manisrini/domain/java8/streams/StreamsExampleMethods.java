@@ -16,29 +16,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class StreamsExampleMethods {
 
-    public void integerStream() {
-
-        System.out.println("1. Integer Stream range");
-        // 1. Integer Stream range . In range Number 5 is not included
-        IntStream.range(1, 5).forEach(number -> System.out.print(number));
-
-        System.out.println("\n\n2. Integer Stream rangeClosed");
-
-        // 2. Integer Stream rangeClosed. In rangeClosed Number 5 is included
-        IntStream.rangeClosed(1, 5).forEach(System.out::print);
-
-        System.out.println("\n\n3. Integer Stream with skip");
-
-        // 3. Integer Stream with skip. It acutualy jumps to 6 meaning starts from 6
-        IntStream.range(1, 10).skip(5).forEach(x -> System.out.print(x));
-
-        System.out.println("\n\n4. Integer Stream with sum");
-
-        // 4. Integer Stream with sum
-        System.out.println(IntStream.range(1, 5).sum());
-
-    }
-
     public void sortedFindFirstFilterIfpresent() {
         System.out.println("\n\n5. Stream.of, sorted and findFirst");
         // 5. Stream.of, sorted and findFirst

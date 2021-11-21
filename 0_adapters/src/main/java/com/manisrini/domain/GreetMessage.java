@@ -1,4 +1,4 @@
-package com.manisrini.model;
+package com.manisrini.domain;
 
 public class GreetMessage {
 
