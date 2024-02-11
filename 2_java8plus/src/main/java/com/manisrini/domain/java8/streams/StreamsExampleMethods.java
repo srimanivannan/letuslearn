@@ -1,20 +1,79 @@
 package com.manisrini.domain.java8.streams;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.manisrini.domain.User;
+import com.manisrini.domain.UserData;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import static java.util.stream.Collectors.toList;
 
-public class StreamsExampleMethods {
+public class StreamsExampleMethods implements UserData {
+
+    public List<Integer> returnSquareRoot(List<Integer> numbers) {
+        List<Integer> squareRootNumbers = numbers.stream().map(Math::sqrt).map(Double::intValue).collect(toList());
+        System.out.println(squareRootNumbers);
+        return squareRootNumbers;
+    }
+
+    public List<Integer> getAgeFromUsers(List<User> users) {
+        List<Integer> usersAge = users.stream().map(User::getAge).collect(toList());
+        System.out.println(usersAge);
+        return usersAge;
+    }
+
+    public List<Integer> getDistinctAges(List<User> users) {
+        List<Integer> usersAge = users.stream().map(User::getAge).distinct().collect(toList());
+        System.out.println(usersAge);
+        return usersAge;
+    }
+
+    public List<User> getLimitedUserList(List<User> users, int limit){
+        List<User> collect = users.stream().limit(limit).collect(toList());
+        System.out.println(String.format("Total Size of collection: %d and limit is %d", collect.size(), limit));
+        System.out.println(collect);
+        return collect;
+    }
+
+    public Integer countUsersOlderThenGivenAge(List<User> users, int givenAge) {
+        long count = users.stream().map(User::getAge).filter(age -> age > givenAge).count();
+        System.out.println(String.format("No of users grater than %d is %d", givenAge, count));
+        // long to Integer
+        // Long.valueOf(count).intValue();
+
+        // another way to long to Integer
+        return Math.toIntExact(count);
+    }
+
+    public List<String> mapToUpperCase(List<User> users) {
+        List<String> collect = users.stream().map(User::getName).map(String::toUpperCase).collect(toList());
+        System.out.println(collect);
+        return collect;
+    }
+
+    public Integer sum(List<Integer> integers) {
+        // Remember: sum method is in IntStream, so you would have to map integer.stream to IntStream
+
+        // explicit boxing happens here. but not required. Method reference
+        int sumMethod1 = integers.stream().mapToInt(Integer::intValue).sum();
+
+        // explicit boxing happens here. but not required
+        int sumMethodintval = integers.stream().mapToInt(it -> it.intValue()).sum();
+
+        // boxing happens here
+        int sumMethodautobox = integers.stream().mapToInt(it -> it).sum();
+
+        Integer sumMethod2 = integers.stream().reduce(0, (a, b) -> a + b);
+        Integer sumMethod3 = integers.stream().reduce(0, Math::addExact);
+
+        return sumMethod3;
+    }
 
     public void sortedFindFirstFilterIfpresent() {
         System.out.println("\n\n5. Stream.of, sorted and findFirst");
@@ -23,7 +82,7 @@ public class StreamsExampleMethods {
 
         System.out.println("\n\n6. Stream from Array, sort, filter and print");
         // 6. Stream from Array, sort, filter and print. same as Stream.of(names)
-        String[] names = { "aathira", "Aathira", "Apple", "Orange", "ant", "Avacado" };
+        String[] names = {"aathira", "Aathira", "Apple", "Orange", "ant", "Avacado"};
         Arrays.stream(names)
                 .filter(x -> x.startsWith("A")).sorted().forEach(System.out::println);
     }
@@ -31,11 +90,11 @@ public class StreamsExampleMethods {
     public void mapAverage() {
         System.out.println("\n\n7. average of squares of an int array");
         // 7. average of squares of an int array
-        Arrays.stream(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }).map(x -> x * 1).average().ifPresent(System.out::println);
+        Arrays.stream(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}).map(x -> x * 1).average().ifPresent(System.out::println);
 
         System.out.println("\n\n8. Stream from List, filter and print");
         // 8. Stream from List, filter and print
-        List<String> people = Arrays.asList( "aathira", "Aathira", "Apple", "Orange", "ant", "Avacado" );
+        List<String> people = Arrays.asList("aathira", "Aathira", "Apple", "Orange", "ant", "Avacado");
         people.stream().map(String::toLowerCase).filter(x -> x.startsWith("a")).forEach(System.out::println);
     }
 
@@ -47,12 +106,13 @@ public class StreamsExampleMethods {
         try {
 
             List<LinkedHashMap<String, String>> myObjects =
-                    mapper.readValue(resource, new TypeReference<List<LinkedHashMap<String, String>>>(){});
+                    mapper.readValue(resource, new TypeReference<List<LinkedHashMap<String, String>>>() {
+                    });
 
-            List<LinkedHashMap<String,String>> filteredJokesList = myObjects
+            List<LinkedHashMap<String, String>> filteredJokesList = myObjects
                     .stream()
                     .filter(jokesMap -> jokesMap.get("type").equals("programming"))
-                    .collect(Collectors.toList());
+                    .collect(toList());
 
             System.out.println(filteredJokesList.size());
 
@@ -69,7 +129,8 @@ public class StreamsExampleMethods {
         try {
 
             List<LinkedHashMap<String, String>> myObjects =
-                    mapper.readValue(resource, new TypeReference<List<LinkedHashMap<String, String>>>(){});
+                    mapper.readValue(resource, new TypeReference<List<LinkedHashMap<String, String>>>() {
+                    });
 
             Map<String, String> collect = myObjects
                     .stream()
@@ -98,13 +159,22 @@ public class StreamsExampleMethods {
         System.out.println(summary);
     }
 
+    private void callAllMethods() {
+        sortedFindFirstFilterIfpresent();
+        mapAverage();
+        filterCollectList();
+        filterCollectMap();
+        reduction();
+        returnSquareRoot(Arrays.asList(16, 9, 25)); // results should be 4, 3, 5
+        getAgeFromUsers(buildUser());
+        getDistinctAges(buildUser());
+        getLimitedUserList(buildUser(), 5);
+        countUsersOlderThenGivenAge(buildUser(), 25);
+        mapToUpperCase(buildUser());
+    }
+
     public static void main(String[] args) {
-        StreamsExampleMethods example1 = new StreamsExampleMethods();
-		/*example1.integerStream();
-		example1.sortedFindFirstFilterIfpresent();
-		example1.mapAverage();
-		example1.filterCollectList();
-		example1.filterCollectMap();*/
-        example1.reduction();
+        StreamsExampleMethods streamsExampleMethods = new StreamsExampleMethods();
+        streamsExampleMethods.callAllMethods();
     }
 }

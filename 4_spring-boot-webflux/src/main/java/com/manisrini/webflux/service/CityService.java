@@ -25,11 +25,12 @@ public class CityService {
   }
 
   public Mono<City> findCityById(Long id) {
-    return Mono.justOrEmpty(cityRepository.findCityById(id));
+    return Mono.justOrEmpty(cityRepository.findCityById(id)).log();
   }
 
   public Flux<City> findAllCity() {
-    return Flux.fromIterable(cityRepository.findAll());
+    Flux<City> cityFlux = Flux.fromIterable(cityRepository.findAll());
+    return cityFlux;
   }
 
   public Mono<City> modifyCity(City city) {

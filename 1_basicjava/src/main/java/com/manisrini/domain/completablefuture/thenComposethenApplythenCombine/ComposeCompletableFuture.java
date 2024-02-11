@@ -13,8 +13,8 @@ import io.vavr.control.Try;
 public class ComposeCompletableFuture {
 
   public static void main(String[] args) throws ExecutionException, InterruptedException {
-    //thenApplyExample(); // this is like stream map . returns nested CompletableFuture
-    thenComposeExample(); // this is like stream flatmap . flattens nested CompletableFu
+    thenApplyExample(); // this is like stream map . returns nested CompletableFuture
+    //thenComposeExample(); // this is like stream flatmap . flattens nested CompletableFu
     //thenCombineAndThenAcceptExample();
   }
 

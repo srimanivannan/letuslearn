@@ -1,17 +1,5 @@
 package com.manisrini.domain.java8.vavr;
 
-import static io.vavr.API.$;
-import static io.vavr.API.Case;
-import static io.vavr.API.List;
-import static io.vavr.API.Match;
-import static io.vavr.Predicates.instanceOf;
-
-import java.net.URI;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-
-import org.junit.jupiter.api.Test;
-
 import io.vavr.Lazy;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
@@ -20,9 +8,15 @@ import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 
-public class VavrTest {
+import java.net.URI;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
-  @Test
+import static io.vavr.API.*;
+import static io.vavr.Predicates.instanceOf;
+
+public class VavrFeaturesExampleTest {
+
   public void example_1() {
 
     // Function1, Function2... Function8
@@ -32,7 +26,6 @@ public class VavrTest {
     List(1, 2, 3);
   }
 
-  @Test
   public void example_2() {
     List<Integer> integers = List.of(Option.of(42), Option.of(54))
         .flatMap(o -> o);
@@ -40,7 +33,6 @@ public class VavrTest {
     System.out.println(integers);
   }
 
-  @Test
   public void example_3() {
     Try.of(() -> new URI(""))
         //  .recoverWith(URISyntaxException.class, Try.of(() -> {new URI("")}))
@@ -49,7 +41,6 @@ public class VavrTest {
         .getOrElse("default");
   }
 
-  @Test
   public void example_4() throws Exception {
     Supplier<Integer> sup = () -> {
       System.out.println("computing..");
@@ -61,7 +52,6 @@ public class VavrTest {
     sup.get();
   }
 
-  @Test
   public void example_5() {
 
     Lazy<Integer> lazy = Lazy.of(() -> {
@@ -75,7 +65,6 @@ public class VavrTest {
     lazy.get();
   }
 
-  @Test
   public void example_6() {
 
     List<Integer> l = List.of(1, 2, 3);
@@ -86,33 +75,28 @@ public class VavrTest {
     System.out.println(l);
   }
 
-  @Test
   public void example_7() {
     List<Integer> l = List.of(1, 2, 3);
 
     System.out.println(l.zipWithIndex());
   }
 
-  @Test
   public void example_8() {
     List.of(1, 2, 3)
         .collect(Collectors.toList());
   }
 
-  @Test
   public void example_9() {
     Stream.iterate(0, i -> i + 1)
         .take(10)
         .forEach(System.out::println);
   }
 
-  @Test
   public void example_10() {
     List.of(1, 2)
         .asJava();
   }
 
-  @Test
   public void example_11() {
     Tuple2<String, Integer> tuple = Tuple.of("Java", 8);
 
@@ -121,14 +105,12 @@ public class VavrTest {
     System.out.println(result);
   }
 
-  @Test
   public void example_12() {
       /*  List.of("")
           .map(unchecked(s -> new URI(s))*/
 
   }
 
-  @Test
   public void example_13() {
     Object a = "42";
 

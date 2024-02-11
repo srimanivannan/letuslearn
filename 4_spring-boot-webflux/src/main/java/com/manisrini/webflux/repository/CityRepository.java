@@ -16,6 +16,20 @@ public class CityRepository {
 
   private static final AtomicLong idGenerator = new AtomicLong(0);
 
+  public CityRepository() {
+    City henrico = buildCity("henrico");
+    repository.put(henrico.getId(), henrico);
+
+    City plano = buildCity("plano");
+    repository.put(plano.getId(), plano);
+
+    City manhattan = buildCity("manhattan");
+    repository.put(manhattan.getId(), manhattan);
+
+    City fallschurch = buildCity("fallschurch");
+    repository.put(fallschurch.getId(), fallschurch);
+  }
+
   public City save(City city) {
     Long id = idGenerator.incrementAndGet();
     city.setId(id);
@@ -24,13 +38,16 @@ public class CityRepository {
   }
 
   public Collection<City> findAll() {
-    City city = new City();
-    city.setCityName("henrico");
-    city.setDescription("description");
-    city.setId(111L);
-    city.setProvinceId(222L);
-    repository.put(1L, city);
     return repository.values();
+  }
+
+  private City buildCity(String cityName) {
+    City city = new City();
+    city.setCityName(cityName);
+    city.setDescription("description");
+    city.setId(idGenerator.incrementAndGet());
+    city.setProvinceId(222L);
+    return city;
   }
 
 
