@@ -12,7 +12,11 @@ group = 'com.manisrini'
 version = '0.0.1-SNAPSHOT'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
+    mavenLocal()
+    maven {
+        setUrl('https://artifacts.mastercard.int/artifactory/maven-all')
+    }
 }
 
 dependencies {

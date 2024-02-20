@@ -16,7 +16,12 @@ java {
 }
 repositories {
     // Use JCenter for resolving dependencies.
-    jcenter()
+    //jcenter()
+    mavenCentral()
+    mavenLocal()
+    maven {
+        setUrl('https://artifacts.mastercard.int/artifactory/maven-all')
+    }
 }
 
 dependencies {

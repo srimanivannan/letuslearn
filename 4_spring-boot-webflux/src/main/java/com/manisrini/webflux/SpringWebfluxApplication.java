@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@EnableWebFlux
 @SpringBootApplication
-public class WebfluxApplication {
+public class SpringWebfluxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebfluxApplication.class, args);
+		SpringApplication.run(SpringWebfluxApplication.class, args);
 	}
 
 }
