@@ -19,9 +19,9 @@ repositories {
     //jcenter()
     mavenCentral()
     mavenLocal()
-    maven {
-        setUrl('https://artifacts.mastercard.int/artifactory/maven-all')
-    }
+//    maven {
+//        setUrl('https://artifacts.mastercard.int/artifactory/maven-all')
+//    }
 }
 
 dependencies {
